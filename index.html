@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./Styles/index.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a id="logo">
+            <img src="Maroon Modern Chicken Logo.png">
+        </a>
+        <a id="menu" onclick="menucard()">Menu</a>
+        <a id="deal">Deals</a>
+        <a id="user">
+            <img src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg">
+        </a>
+        <a  id="sign">Sign In  <a id="one">|</a></a>
+        <a id="two">₹</a>
+        <a id="cart"><img src="https://images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg"></a>
+    </div>
+    <div class="top1">
+    <div>LET'S ORDER FOR DELIVERY,PICK UP, OR DINE-IN </div>
+    <button>START ORDER</button>
+    </div>
+    <!-- slider -->
+    <div class="imageContainer"></div>
+    <div id="top2">
+        <h1>Welcome To Chicken Lover!</h1>
+    </div>
+    <div id="browse">
+        <h1>BROWSE CATEGORY</h1>
+        <p>_______________________________________________________</p>
+    </div>
+    <div id="category">
+        <div>
+            <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT115.jpg?ver=21.88" alt="">
+            <h2>HOT DEALS</h2>
+        </div>
+        <div>
+            <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT116.jpg?ver=21.88" alt="">
+            <h2>CHICKEN BUCKETS</h2>
+        </div>
+        <div>
+            <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT201.jpg?ver=21.88" alt="">
+            <h2>HOT LAUNCHES</h2>
+        </div>
+        <div>
+            <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT84.jpg?ver=21.88" alt="">
+            <h2>BOX MEALS</h2>
+        </div>
+        <div>
+            <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT99.jpg?ver=21.88" alt="">
+            <h2>BURGERS</h2>
+        </div>
+        <div>
+            <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT189.jpg?ver=21.88" alt="">
+            <h2>BIRYANI BUCKETS</h2>
+        </div>
+        <div>
+            <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT175.jpg?ver=21.88" alt="">
+            <h2>SNACK</h2>
+        </div>
+        <div>
+            <img src="https://online.kfc.co.in/static/media/finger_lickin.fc21c805.svg" alt="">
+            <h2>View All Menu →</h2>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let array=[
+                "https://images.ctfassets.net/wtodlh47qxpt/4gztBB8yAvtp6jV7JAuLD/093fddbb77a78a44a4d3d5e066c592de/KFC_Peri_Peri_Banner__1440x396px.jpg?w=1280&fit=fill&fm=webp",
+                "https://images.ctfassets.net/wtodlh47qxpt/5477Y6AToWWjDUgchkqn5l/644a80e35a990d1bee592811b278fddd/Wedmesday_banner_1440x396px.jpg?w=1280&fit=fill&fm=webp",
+                "https://images.ctfassets.net/wtodlh47qxpt/Na9oR4t8WKmSjIuy5pg4U/2fef58b44c29bbb4341ed116bac84f44/KFC_Maggi__Banner__1440x396px__2_.jpg?w=1280&fit=fill&fm=webp",
+                "https://images.ctfassets.net/wtodlh47qxpt/4w2NU51eNqAlF0S4k3YLTB/0d9dd4031fc40bd266a2b4ac49834491/1440_x_396_Value_Burger.jpg?w=1280&fit=fill&fm=webp",
+                "https://images.ctfassets.net/wtodlh47qxpt/2cKs5e17FbKIE7Dza5ZlNM/e7163ee02d91d59d81a20ecf606f707b/Biryani_Banner_1440x396px.jpg?w=1280&fit=fill&fm=webp"
+    ]
+
+    let image=document.createElement("img");
+    document.querySelector(".imageContainer").append(image);
+  
+    let i=0;
+    slider(i);
+    function slider(el){
+        setInterval(function(){
+            if(el<array.length){
+                image.src=array[el];
+                el++;
+            }
+            if(el==array.length){
+                el=0;
+            }
+        },1000);}
+</script>
