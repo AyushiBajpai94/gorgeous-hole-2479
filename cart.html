@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./Styles/cart.css" />
+</head>
+<body>
+      <!-- Navbar -->
+      <div class="navbar">
+        <a id="logo" href="">
+            <img src="Maroon Modern Chicken Logo.png">
+        </a>
+        <a id="menu" onclick="menucard()" href="Dashboard.html">Menu</a>
+        <a id="deal">Deals</a>
+        <div class="Sign">
+            <a id="user" href="">
+                <img src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg">
+            </a>
+                <a  id="sign">Sign In  <a id="one">|</a></a>
+                <a id="two">₹</a>
+                <a href="cart.html"  id="cart"><img src="https://images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg"></a>
+        </div>
+     </div>
+
+
+    <div id="cartbody">
+    <h1>MY CART</h1>
+    </div>
+    <div id="container"></div>
+
+    <div class="Lbottom">
+        <div>
+            <a id="logo" href="">
+                <img src="Maroon Modern Chicken Logo.png">
+            </a>
+        </div>
+        <div>
+                <a>Chicken Lover Food</a>
+                <a>Menu</a>
+                <a>Order Lookup</a>
+                <a>Gift Card</a>
+                <a>NUTRITION & ALLERGEN</a>
+        </div>
+        <div>
+                <a>Support</a>
+                <a>Get Help</a>
+                <a>Contact Us</a>
+                <a>Chicken Lover Feedback</a>
+                <a>Privacy Policy</a>
+        </div>
+        <div>
+                <a>Legal</a>
+                <a>Terms & Conditions</a>
+                <a>Privacy Policy</a>
+                <a>Disclaimer</a>
+                <a>Caution Notice</a>
+        </div>
+        <div>
+                <a>Chicken Lover India</a>
+                <a>About us</a>
+                <a>Careers</a>
+                <a>Our Golden Past</a>
+                <a>Chicken Lover Care</a>
+        </div>
+        <div>
+            <a href="https://restaurants.kfc.co.in/">
+                <img src="https://images.ctfassets.net/wtodlh47qxpt/6qgKpWUOIsrIiazhk3cdmF/d60b4c20be69bab1f939bf33348b67e9/Find_KFC.svg">
+                Find a Chicken Lover
+            </a>
+        </div>
+        <div>
+            <a href="https://play.google.com/store/apps/details?id=com.yum.kfc">
+                <img src="https://eep.io/images/yzco4xsimv0y/64EpnI4RsQI66c2y2O60G2/4c34d7bc4dd7a4362c7e19a06c109e21/icon-android.svg?w=320&fm=webp&q=80" width="130px" height="50px"></a>
+        </div>
+
+
+        <div>
+            <a href="https://apps.apple.com/in/app/kfc-india/id915824379">
+                <img src="https://i.pinimg.com/originals/bb/4b/15/bb4b1544973b6bc78738d35bfa352406.jpg" width="50px" height="50px">
+            Apple Store</a>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    let cartItems=JSON.parse(localStorage.getItem("CartProducts"))||[];
+
+    // let totalCost=cartItems.reduce((acc,el)=>acc+el.bag,0);
+    // console.log(totalCost);
+    // console.log(totalCost);
+
+let bag=0;
+    // displaydata(cartItems)
+    function displaydata(){
+        document.getElementById("container").innerHTML="";
+    for(let i=0;i<cartItems.length;i++){
+            let Div=document.createElement("div");
+
+            let image=document.createElement("img");
+            image.setAttribute("src",cartItems[i].Image);
+
+            let product=document.createElement("h2");
+            product.innerText=cartItems[i].Name;
+
+            let price=document.createElement("h2");
+            price.innerText=cartItems[i].Price;
+            
+            let addbtn=document.createElement("button");
+            addbtn.setAttribute("class","add");
+            addbtn.setAttribute("id",cartItems[i].Name);
+            addbtn.innerText="+";
+            addbtn.addEventListener("click",function(){
+                additem(cartItems[i].Name);
+            });
+            
+            // bag+=cartItems[i].Price*cartItems[i].Qty;
+
+            let subbtn=document.createElement("button");
+            subbtn.setAttribute("class","sub");
+            subbtn.setAttribute("id",cartItems[i].Name);
+            subbtn.innerText="-";
+            subbtn.addEventListener("click",function(){
+                subitem(cartItems[i].Name);
+            });
+            let Qty=document.createElement("button");
+            Qty.innerText=cartItems[i].Qty;
+            // let description=document.createElement("p");
+            // description.innerText=el.Description;
+
+            let Delete=document.createElement("button");
+            Delete.innerText="Remove";
+            Delete.setAttribute("class","Del");
+            Delete.setAttribute("id",cartItems[i].Name);
+            Delete.addEventListener("click",function(){
+                delitem(cartItems[i].Name);
+    });
+   
+    Div.append(image,product,price,addbtn,"\n","\n",Qty,"\n","\n",subbtn,"\n","\n","\n",Delete);
+    document.querySelector("#container").append(Div);
+        }
+        let Totalprice=Math.ceil(totalprice(cartItems));
+        // console.log(Math.ceil(Totalprice));
+        // let Totalcart=document.createElement("h4");
+        // Totalcart.innerText="Totalprice: "+ Totalprice;
+        document.querySelector("#two").append(Totalprice);
+                // console.log(bag);
+     }
+
+function additem(name){
+    for(let i=0;i<cartItems.length;i++){
+        if(cartItems[i].Name==name){
+            cartItems[i].Qty++;
+            // console.log(Qty);
+            displaydata();
+            alert("added extra")
+            return;
+        }
+    }
+    
+}
+function subitem(name){
+    for(let i=0;i<cartItems.length;i++){
+        if(cartItems[i].Name==name){
+            cartItems[i].Qty--;
+            // console.log(Qty);
+            displaydata();
+            alert("remove")
+            return;
+        }
+    }
+    
+}
+function delitem(name){
+    for(let i=0;i<cartItems.length;i++){
+        if(cartItems[i].Name==name){
+            cartItems.splice(i,1);
+            displaydata();
+            return;
+        }
+    }
+}
+
+function totalprice(cartItems){
+    let totalcartprice=0;
+    let totalcartqty=0;
+    let total;
+    for(let i=0;i<cartItems.length;i++){
+        totalcartprice+=cartItems[i].Price*cartItems[i].Qty;
+        totalcartqty+=cartItems[i].Qty;
+        
+    }
+    return totalcartprice;
+}
+
+
+displaydata();
+console.log(bag);
+</script>

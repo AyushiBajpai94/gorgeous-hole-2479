@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./Styles/dashbord.css" />
+</head>
+<body>
+     <!-- Navbar -->
+     <div class="navbar">
+        <a id="logo" href="index.html">
+            <img src="Maroon Modern Chicken Logo.png">
+        </a>
+        <a id="menu" onclick="menucard()">Menu</a>
+        <a id="deal">Deals</a>
+        <div class="Sign">
+            <a id="user" href="login.html">
+                <img src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg">
+            </a>
+                <a id="sign">Sign In  <a id="one">|</a></a>
+                <a id="two">₹</a>
+                <a href="cart.html"  id="cart"><img src="https://images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg"></a>
+        </div>
+     </div>
+
+     <div class="top">
+     <!-- sidenavbar -->
+     <div class="sidenavbar">
+        <h2>Chicken Lover Menu</h2>
+        <a>Hot Deals</a>
+        <a>Chicken Buckets</a>
+        <a>Hot Launches</a>
+        <a>Box Meals</a>
+        <a>Burgers</a>
+        <a>Biryani Buckets</a>
+        <a>Snack</a>
+        <a>Beverages and Deserts</a>
+     </div>
+             <!-- Main -->
+
+     <div class="Main">
+            <input type="search" placeholder="search our menu" id="search">
+            <div id="Main-child">
+                <h1>Hot Deals</h1>
+                <div id="cat1"></div>
+            </div>
+            <div id="second-child">
+                <h1>CHICKEN BUCKETS</h1>
+                <div id="cat2"></div>
+            </div>
+            <div id="third-child">
+                <h1>HOT LAUNCHES</h1>
+                <div id="cat3"></div>
+            </div>
+            <div id="fourth-child">
+                <h1>BOX MEALS</h1>
+                <div id="cat4"></div>
+            </div>
+            <div id="fifth-child">
+                <h1>BURGERS</h1>
+                <div id="cat5"></div>
+            </div>
+            
+            
+     </div>
+     <div class="Lbottom">
+        <div>
+            <a id="logo" href="">
+                <img src="Maroon Modern Chicken Logo.png">
+            </a>
+        </div>
+        <div>
+                <a>Chicken Lover Food</a>
+                <a>Menu</a>
+                <a>Order Lookup</a>
+                <a>Gift Card</a>
+                <a>NUTRITION & ALLERGEN</a>
+        </div>
+        <div>
+                <a>Support</a>
+                <a>Get Help</a>
+                <a>Contact Us</a>
+                <a>Chicken Lover Feedback</a>
+                <a>Privacy Policy</a>
+        </div>
+        <div>
+                <a>Legal</a>
+                <a>Terms & Conditions</a>
+                <a>Privacy Policy</a>
+                <a>Disclaimer</a>
+                <a>Caution Notice</a>
+        </div>
+        <div>
+                <a>Chicken Lover India</a>
+                <a>About us</a>
+                <a>Careers</a>
+                <a>Our Golden Past</a>
+                <a>Chicken Lover Care</a>
+        </div>
+        <div>
+            <a href="https://restaurants.kfc.co.in/">
+                <img src="https://images.ctfassets.net/wtodlh47qxpt/6qgKpWUOIsrIiazhk3cdmF/d60b4c20be69bab1f939bf33348b67e9/Find_KFC.svg">
+                Find a Chicken Lover
+            </a>
+        </div>
+        <div>
+            <a href="https://play.google.com/store/apps/details?id=com.yum.kfc">
+                <img src="https://eep.io/images/yzco4xsimv0y/64EpnI4RsQI66c2y2O60G2/4c34d7bc4dd7a4362c7e19a06c109e21/icon-android.svg?w=320&fm=webp&q=80" width="130px" height="50px"></a>
+        </div>
+
+
+        <div>
+            <a href="https://apps.apple.com/in/app/kfc-india/id915824379">
+                <img src="https://i.pinimg.com/originals/bb/4b/15/bb4b1544973b6bc78738d35bfa352406.jpg" width="50px" height="50px">
+            Apple Store</a>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    let cartItems=JSON.parse(localStorage.getItem("CartProducts"))||[];
+
+  
+
+
+let category1=[
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000240.jpg?ver=21.88",
+            Productname:"The Allu Arjun Combo",
+            Price:399.05,
+            Description:"Enjoy 1pc Hot & Crispy Chicken, 1pc Smoky Red, Reg Popcorn, Spicy Mix Fries & a Dip"},
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000078.jpg?ver=21.88",
+            Productname:"5+5 Bucket Offer",
+            Price:699.05,
+            Description:"Save 15% on special combo of 5pc Hot & Crispy Chicken + 5 Peri Peri Strips"},
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000169.jpg?ver=21.88",
+            Productname:"Peri Peri 10 Leg piece + 4 dips",
+            Price:868.57,
+            Description:"Save 22% on this Leg Piece Bucket with 10 KFC Peri Peri Leg Piece with 4 dips"},
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000155.jpg?ver=21.88",
+            Productname:"Mega Feast",
+            Price:635.24,
+            Description:"Relish a big size feast with KFC favorites & new launches- 2 pc H&C,2 pc Smoky Grilled, 1 buttered bun, 1gravy, med.fries & pepsi"},
+
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000128.jpg?ver=21.88",
+            Productname:"Big12-Chicken Bucket",
+            Price:719.05,
+            Description:"6pc Hot & Crispy Chicken + 6 Wings + 2 Dips"},
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000185.jpg?ver=21.88",
+            Productname:"Mingles Meal",
+            Price:599.05,
+            Description:"21% off on-4 Wings + 2 Peri Peri Strips + Reg Popcorn + Med Fries + 2 Reg Pepsi"},
+
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-403124.jpg?ver=21.88",
+            Productname:"4pc Hot & Crispy with 2 Pepsi",
+            Price:450,
+            Description:"4 pieces of crispy, juicy chicken in a bucket served with 2 Pepsi"},
+        ]
+function displaydatacat1(arr){
+    for(let i=0;i<arr.length;i++){
+            let Div=document.createElement("div");
+
+            let image=document.createElement("img");
+            image.setAttribute("src",arr[i].url);
+
+            let product=document.createElement("h2");
+            product.innerText=arr[i].Productname;
+
+            let price=document.createElement("h2");
+            price.innerText=arr[i].Price;
+
+            let description=document.createElement("p");
+            description.innerText=arr[i].Description;
+
+            let cart=document.createElement("button");
+            cart.innerText="Add To Cart";
+            cart.addEventListener("click",function(){
+            addData("CartProducts",i);
+    });
+    Div.append(image,product,price,description,cart);
+    document.querySelector("#cat1").append(Div);
+        };
+     }
+     displaydatacat1(category1);   
+
+function addData(key,value){
+      let LSData=JSON.parse(localStorage.getItem(key))||[];
+      let newobj={
+      Image:category1[value].url,      
+      Name:category1[value].Productname,
+      Price:category1[value].Price,
+      Qty:1,
+    };
+    LSData.push(newobj);
+    localStorage.setItem(key,JSON.stringify(LSData));
+    console.log(LSData)
+     }
+
+
+let category2=[
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000218.jpg?ver=21.88",
+                Productname:"5 Peri Peri Leg Pc+2Dips+ 2Pepsi+3Pc Cheesy Sticks",
+                Price:638.10,
+                Description:"5 Pc leg piece meal with 2 Dips, 2 Pepsi and New 3 Pcs Cheesy Sticks"},
+
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000167.jpg?ver=21.88",
+                Productname:"Peri Peri 5 Leg piece + 2 Dips",
+                Price:459.05,
+                Description:"Save 20% on this combo"},
+
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-403124.jpg?ver=21.88",
+                Productname:"4pc Hot & Crispy with 2 Pepsi",
+                Price:404.76,
+                Description:"4 pieces of crispy, juicy chicken in a bucket served with 2 Pepsi"},
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000185.jpg?ver=21.88",
+                Productname:"Mingles Meal",
+                Price:488.57,
+                Description:"Save 21% on- 4 Wings + 2 Chicken Strips + Reg Popcorn + Med Fries + 2 Reg Pepsi"},
+
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-100015.jpg?ver=21.88",
+                Productname:"Hot & Crispy Chicken -8pc",
+                Price:679.05,
+                Description:"8 pc Hot & Cripsy"},
+
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000178.jpg?ver=21.88",
+                Productname:"Ultimate Savings Bucket",
+                Price:648.57,
+                Description:"Save 40% on USB -KFC variety bucket now with Peri Peri Strips-Grab Now!"},
+]
+function displaydatacat2(arr1){
+    for(let i=0;i<arr1.length;i++){
+            let Div=document.createElement("div");
+
+            let image=document.createElement("img");
+            image.setAttribute("src",arr1[i].url);
+
+            let product=document.createElement("h2");
+            product.innerText=arr1[i].Productname;
+
+            let price=document.createElement("h2");
+            price.innerText=arr1[i].Price;
+
+            let description=document.createElement("p");
+            description.innerText=arr1[i].Description;
+
+            let cart=document.createElement("button");
+            cart.innerText="Add To Cart";
+            cart.addEventListener("click",function(){
+            addData("CartProducts",i);
+        });
+            Div.append(image,product,price,description,cart);
+            // console.log(Div)
+            document.querySelector("#cat2").append(Div);
+                
+            
+        }
+    }
+     displaydatacat2(category2);
+function addData(key,value){
+     let LSData=JSON.parse(localStorage.getItem(key))||[];
+     let newobj={
+      Image:category2[value].url,      
+      Name:category2[value].Productname,
+      Price:category2[value].Price,
+      Qty:1,
+    };
+    LSData.push(newobj);
+    localStorage.setItem(key,JSON.stringify(LSData));
+    console.log(LSData)
+     }
+
+
+let category3=[
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000238.jpg?ver=21.88",
+            Productname:"Chicken Popcorn Maggi Bowl",
+            Price:159.05,
+            Description:"Two flavourful favourites served together- Chicken Popcorn with Maggi"},
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000239.jpg?ver=21.88",
+            Productname:"Veg Patty Maggi Bowl",
+            Price:128.57,
+            Description:"Maggi served with delicious Veg Patty"},
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000144.jpg?ver=21.88",
+            Productname:"Spicy Mix Fries -Large",
+            Price:119.05,
+            Description:"Your KFC Medium Fries can now be seasoned with lemony tang & chili spice in this combo"},
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000145.jpg?ver=21.88",
+            Productname:"Spicy Mix Fries -Medium",
+            Price:114.29,
+            Description:"Your KFC Large Fries can now be seasoned with lemony tang & chili spice in this combo"},
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000195.jpg?ver=21.88",
+            Productname:"Peri Peri 6pc Chicken Strips",
+            Price:238.10,
+            Description:"Grab the Spicy & Sizzling Peri Peri 6 pc. Chicken Boneless Strips snack!"},
+
+            {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000148.jpg?ver=21.88",
+            Productname:"Biryani Rice",
+            Price:128.57,
+            Description:"Flavorful Aromatic rice to pair with your favorite KFC favorites"},
+
+]
+
+function displaydatacat3(arr1){
+    for(let i=0;i<arr1.length;i++){
+            let Div=document.createElement("div");
+
+            let image=document.createElement("img");
+            image.setAttribute("src",arr1[i].url);
+
+            let product=document.createElement("h2");
+            product.innerText=arr1[i].Productname;
+
+            let price=document.createElement("h2");
+            price.innerText=arr1[i].Price;
+
+            let description=document.createElement("p");
+            description.innerText=arr1[i].Description;
+
+            let cart=document.createElement("button");
+            cart.innerText="Add To Cart";
+            cart.addEventListener("click",function(){
+            addData("CartProducts",i);
+        });
+            Div.append(image,product,price,description,cart);
+            // console.log(Div)
+            document.querySelector("#cat3").append(Div);
+                
+            
+        }
+    }
+     displaydatacat3(category3);
+function addData(key,value){
+        let LSData=JSON.parse(localStorage.getItem(key))||[];
+        let newobj={
+      Image:category3[value].url,      
+      Name:category3[value].Productname,
+      Price:category3[value].Price,
+      Qty:1,
+    };
+    LSData.push(newobj);
+    localStorage.setItem(key,JSON.stringify(LSData));
+    console.log(LSData)
+     }
+
+
+
+
+ let category4=[
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000042.jpg?ver=21.88",
+                Productname:"Popcorn Biryani Box",
+                Price:279.05,
+                Description:"Value Meal with flavorful Popcorn Biryani Bucket & spicy dip, 2 piece Hot Wings and Pepsi"},
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000043.jpg?ver=21.88",
+                Productname:"Veg Biryani Box",
+                Price:248.57,
+                Description:"Value Meal with flavorful Veg Biryani Bucket & spicy dip, veg patty and Pepsi"},
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-404059.jpg?ver=21.88",
+                Productname:"Classic Zinger Box Meal",
+                Price:288.57,
+                Description:"Value Meal with Classic Zinger, 2 piece Hot Wings, Fries and Pepsi"},
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000189.jpg?ver=21.88",
+                Productname:"All Chicken Box Meal",
+                Price:179.05,
+                Description:"1pc Hot & Crispy + 2 Peri Peri Strips + Reg Pepsi"},
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-404060.jpg?ver=21.88",
+                Productname:"Tandoori Zinger Box Meal",
+                Price:299.05,
+                Description:"Value Meal with Tandoori Zinger, 2 piece Hot Wings, Fries and Pepsi"},
+]
+
+function displaydatacat4(arr1){
+    for(let i=0;i<arr1.length;i++){
+            let Div=document.createElement("div");
+
+            let image=document.createElement("img");
+            image.setAttribute("src",arr1[i].url);
+
+            let product=document.createElement("h2");
+            product.innerText=arr1[i].Productname;
+
+            let price=document.createElement("h2");
+            price.innerText=arr1[i].Price;
+
+            let description=document.createElement("p");
+            description.innerText=arr1[i].Description;
+
+            let cart=document.createElement("button");
+            cart.innerText="Add To Cart";
+            cart.addEventListener("click",function(){
+            addData("CartProducts",i);
+        });
+            Div.append(image,product,price,description,cart);
+            // console.log(Div)
+            document.querySelector("#cat4").append(Div);
+                
+            
+        }
+    }
+     displaydatacat4(category4);
+function addData(key,value){
+        let LSData=JSON.parse(localStorage.getItem(key))||[];
+        let newobj={
+        Image:category4[value].url,      
+        Name:category4[value].Productname,
+        Price:category4[value].Price,
+        Qty:1,
+     };
+    LSData.push(newobj);
+    localStorage.setItem(key,JSON.stringify(LSData));
+    console.log(LSData)
+     }
+
+
+let category5=[
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-404087.jpg?ver=21.88",
+                Productname:"Classic Chicken Krisper",
+                Price:99.05,
+                Description:"Value burger with a chicken fillet, lettuce and mayo"},
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-404088.jpg?ver=21.88",
+                Productname:"Spicy Chicken Krisper",
+                Price:99.05,
+                Description:"Value burger with a chicken fillet, lettuce and spicy sauce"},
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-404140.jpg?ver=21.88",
+                Productname:"Classic Chicken Krisper, Popcorn & Pepsi Combo",
+                Price:228.57,
+                Description:"Value burger with a chicken fillet, lettuce and mayo served with Popcorn & Pepsi"},
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-110212.jpg?ver=21.88",
+                Productname:"Zinger, Wings and Pepsi combo",
+                Price:402.86,
+                Description:"Relish the Classic Zinger with 4 pieces Hot Wings and Pepsi"},
+
+                {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-110201.jpg?ver=21.88",
+                Productname:"Chicken Zinger Burger - Classic",
+                Price:179.05,
+                Description:"Signature chicken burger made with a crunchy chicken fillet, veggies & a delicious mayo sauce"},
+]
+function displaydatacat5(arr1){
+    for(let i=0;i<arr1.length;i++){
+            let Div=document.createElement("div");
+
+            let image=document.createElement("img");
+            image.setAttribute("src",arr1[i].url);
+
+            let product=document.createElement("h2");
+            product.innerText=arr1[i].Productname;
+
+            let price=document.createElement("h2");
+            price.innerText=arr1[i].Price;
+
+            let description=document.createElement("p");
+            description.innerText=arr1[i].Description;
+
+            let cart=document.createElement("button");
+            cart.innerText="Add To Cart";
+            cart.addEventListener("click",function(){
+                alert("Added to cart");
+                addData("CartProducts",i);
+        });
+            Div.append(image,product,price,description,cart);
+            // console.log(Div)
+            document.querySelector("#cat5").append(Div);
+        }
+    }
+
+displaydatacat5(category5);
+function addData(key,value){
+        let LSData=JSON.parse(localStorage.getItem(key))||[];
+        let newobj={
+        Image:category5[value].url,      
+        Name:category5[value].Productname,
+        Price:category5[value].Price,
+        Qty:1,
+    };
+    LSData.push(newobj);
+    localStorage.setItem(key,JSON.stringify(LSData));
+    console.log(LSData)
+     }
+</script>

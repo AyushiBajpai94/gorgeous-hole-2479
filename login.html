@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+    <link rel="stylesheet" href="./Styles/login.css" />
+</head>
+<body>
+    <div class="main">
+        <h4>Sign in / Sign up</h4>
+        <a id="logo" href="index.html">
+            <img src="Maroon Modern Chicken Logo.png">
+        </a>
+        <h4>LET’S SIGN IN OR CREATE ACCOUNT WITH YOUR PHONE NUMBER!</h4>
+        <input type="number" placeholder="Enter Phone Number*" id="typenumber">
+        <p>By “logging in to Chicken Lover”, you agree to our Privacy Policy and Terms & Conditions.</p>
+        <button id="code" onclick="generateotp()">Send Me A Code</button>
+
+        <p>_____________________or_________________________</p>
+        <br>
+        <button id="skip"><a href="cart.html">Skip,Continue As Guest</a></button>
+
+    </div>
+</body>
+</html>
+<script>
+    let data=JSON.parse(localStorage.getItem("otp"))||[];
+    let bag=[];
+    function generateotp(){
+        alert("OTP sent");
+        let digits='0123456789';
+        let OTP='';
+        for(let i=0;i<4;i++){
+            OTP+=digits[Math.floor(Math.random()*10)];
+        }
+        bag.push(OTP);
+        return(OTP);
+        localStorage.setItem(otp,JSON.stringify(bag));
+       
+    
+    }
+    generateotp();
+    console.log(bag);
+
+
+</script>

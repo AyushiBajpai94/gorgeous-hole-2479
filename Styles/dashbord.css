@@ -1,0 +1,389 @@
+.navbar{
+    /* border: 1px solid black; */
+    display: block;
+    display: flex;
+    justify-items: center;
+    justify-content: space-evenly;
+    text-align: left;
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 1;
+    height: 110px;
+    width: 100%;
+    padding-top: 2px;
+    padding-left: 2px;
+    
+ }
+ /* button{
+   background-color: red;
+   color: white;
+   height: 40px;
+   width: 150px;
+   text-align: center;
+   border-radius: 20px;
+ } */
+ .Sign{
+   margin-left: 700px;
+   height: 30px;
+   width: 200px;
+   display: flex;
+   justify-content: space-evenly;
+   position: relative;
+    top: 50px;
+    font-size:x-large;
+ }
+ 
+ #menu,#deal{
+    position: relative;
+    top: 50px;
+    font-size:x-large;
+ }
+ #logo img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+ }
+ .navbar a:hover{
+    color: #c91c53;
+ }
+ .navbar>a:nth-child(2){
+    margin-left: 3%;
+    font-size: large;
+ }
+ .navbar>a:nth-child(3){
+    margin-left: 3%;
+    font-size: large;
+ }
+ .navbar>a:nth-child(4){
+    margin-left: 60%;
+ }
+ .navbar>a:nth-child(5){
+   font-size: large;
+ }
+ .navbar>a:nth-child(6){
+   font-size: xx-large;
+   color: grey;
+padding-bottom: 40%;
+ }
+ .navbar>a:nth-child(7){
+   font-size: xx-large;
+ }
+ #user>img{
+    height: 30px;
+    width: 30px;
+ }
+ #cart>img{
+   /* border: 1px solid black; */
+    height: 30px;
+    width: 40px;
+    margin-left: 2px;
+ }
+.top{
+   height: 100%;
+   width: 100%;
+   /* position: fixed; */
+   /* top: 110px; */
+   /* border: 2px solid black; */
+}
+ 
+ .sidenavbar{
+   /* border: 1px solid black; */
+   height:auto;
+   width: 250px;
+   position: fixed;
+   top: 115px;
+   left: 50px;
+   background-color: white;
+   z-index: -1;
+   
+ }
+ .sidenavbar h2{
+   text-align: center;
+   color: black;
+ }
+ .sidenavbar a{
+   display: block;
+   font-size: 20px;
+   padding: 6px 8px 6px 16px;
+   color: gray;
+ }
+ .sidenavbar a:hover{
+   color: black;
+   cursor: -webkit-grab;
+ }
+ .Main{
+   /* border: 1px solid red; */
+   height: 100%;
+   width: 80%;
+   margin-top: 100px;
+  margin-left: 300px;
+ }
+ #search{
+   /* border: 1px solid blue; */
+   height: 30px;
+   width: 300px;
+   margin-left: 50px;
+   margin-top: 25px;
+   border-radius: 30px;
+  
+ }
+ #Main-child{
+   /* border: 3px solid black; */
+   background-color:rgb(246, 244, 244);
+   height: 100%;
+   width: 90%;
+   margin-top: 5px;
+   padding-left: 10px;
+ }
+ #Main-child>h1{
+   padding-left: 20px;
+ }
+ #cat1{
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   gap: 20px;
+   height: auto;
+   width: 95%;
+   margin:auto;
+   padding-bottom: 10px;
+ }
+ #cat1>div{
+   /* border: 1px solid black; */
+   border-radius: 10px;
+   text-align: center;
+   /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+ }
+ #cat1>div>img{
+   width: 100%;
+   text-align: center;
+   border-radius: 10px;
+ }
+ #second-child{
+      /* border: 3px solid black; */
+      /* background-color:blanchedalmond; */
+      height: 100%;
+      width: 90%;
+      margin-top: 2px;
+      padding-left: 10px;
+    }
+    #second-child>h1{
+      padding-left: 20px;
+    }
+    #cat2{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+      height: auto;
+      width: 95%;
+      margin:auto;
+      padding-bottom: 10px;
+    }
+    #cat2>div{
+      /* border: 1px solid black; */
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    #cat2>div>img{
+      width: 100%;
+      text-align: center;
+      border-radius: 10px;
+    }
+    #third-child{
+      /* border: 3px solid black; */
+      /* background-color:blanchedalmond; */
+      height: 100%;
+      width: 90%;
+      margin-top: 2px;
+      padding-left: 10px;
+    }
+    #third-child>h1{
+      padding-left: 20px;
+    }
+    #cat3{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+      height: auto;
+      width: 95%;
+      margin:auto;
+      padding-bottom: 10px;
+    }
+    #cat3>div{
+      /* border: 1px solid black; */
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    #cat3>div>img{
+      width: 100%;
+      text-align: center;
+      border-radius: 10px;
+    }
+    #fourth-child{
+      /* border: 3px solid black; */
+      height: 100%;
+      width: 90%;
+      margin-top: 2px;
+      padding-left: 10px;
+    }
+    #fourth-child>h1{
+      padding-left: 20px;
+    }
+    #cat4{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+      height: auto;
+      width: 95%;
+      margin:auto;
+      padding-bottom: 10px;
+    }
+    #cat4>div{
+      /* border: 1px solid black; */
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    #cat4>div>img{
+      width: 100%;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    #fifth-child{
+      /* border: 3px solid black; */
+      height: 100%;
+      width: 90%;
+      margin-top: 2px;
+      padding-left: 10px;
+    }
+    #fifth-child>h1{
+      padding-left: 20px;
+    }
+    #cat5{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+      height: auto;
+      width: 95%;
+      margin:auto;
+      padding-bottom: 10px;
+    }
+    #cat5>div{
+      /* border: 1px solid black; */
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    #cat5>div>img{
+      width: 100%;
+      text-align: center;
+      border-radius: 10px;
+    }
+ 
+    .Lbottom{
+      /* border: 1px solid black; */
+      height: 300px;
+      width: 100%;
+      display: flex;
+      background-color: black;
+    }
+   
+    .Lbottom>div:first-child{
+      margin-top: 30px;
+      margin-left: 70px;
+      height: 200px;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      /* border: 1px solid red; */
+    }
+    .Lbottom>div:nth-child(2){
+      /* margin-left: 2px; */
+      margin-top: 30px;
+      height: 200px;
+      width: 180px;
+      display: flex;
+      color: white;
+      flex-direction: column;
+      justify-content: space-evenly;
+      /* border: 1px solid red; */
+    }
+    .Lbottom>div:nth-child(3){
+      /* margin-left: 2px; */
+      margin-top: 30px;
+      height: 200px;
+      width: 180px;
+      display: flex;
+      color: white;
+      flex-direction: column;
+      justify-content: space-evenly;
+      /* border: 1px solid red; */
+    }
+    .Lbottom>div:nth-child(4){
+      /* margin-left: 2px; */
+      margin-top: 30px;
+      height: 200px;
+      width: 180px;
+      display: flex;
+      color: white;
+      flex-direction: column;
+      justify-content: space-evenly;
+      /* border: 1px solid red; */
+    }
+    .Lbottom>div:nth-child(5){
+      /* margin-left: 2px; */
+      margin-top: 30px;
+      height: 200px;
+      width: 180px;
+      display: flex;
+      color: white;
+      flex-direction: column;
+      justify-content: space-evenly;
+      /* border: 1px solid red; */
+    }
+    .Lbottom>div:nth-child(6){
+      /* margin-left: 2px; */
+      margin-top: 30px;
+      height: 100px;
+      width: 180px;
+      color: white;
+      /* border: 1px solid red; */
+      padding-top: 20px;
+    }
+    .Lbottom>div:nth-child(6) a{
+      color: white;
+    }
+    .Lbottom>div:nth-child(7){
+      margin-top: 30px;
+      height: 100px;
+      width: 180px;
+      /* border: 1px solid red; */
+      padding-top: 10px;
+    }
+    .Lbottom>div:nth-child(8){
+      /* margin-left: 2px; */
+      margin-top: 30px;
+      height: 100px;
+      width: 180px;
+      /* border: 1px solid yellow; */
+      padding-top: 10px;
+      display: flex;
+      color: white;
+    }
+    .Lbottom>div:nth-child(8) img{
+      
+      /* border: 1px solid yellow; */
+      position: relative;
+      top: 2px;
+      left:10px;
+      border-radius: 50px;
+     
+    }
+    .Lbottom>div:nth-child(8) a{
+      color: white;
+    }    
