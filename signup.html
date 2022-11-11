@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+    <link rel="stylesheet" href="./Styles/signup.css" />
+</head>
+<body>
+    <div class="main">
+        <h4>Sign in / Sign up</h4>
+        <a id="logo" href="index.html">
+            <img src="Maroon Modern Chicken Logo.png">
+        </a>
+        <h4>LET’S SIGN IN OR CREATE ACCOUNT WITH YOUR PHONE NUMBER!</h4>
+        <div id="signup">
+            <form>
+                <h4>Email</h4>
+                <input type="email" placeholder="Enter mail id" id="mail">
+                <h4>Phone Number</h4>
+                <input type="number" placeholder="Enter Phone Number*" id="phone"><br>
+                <h4>Password</h4>
+                <input type="password" placeholder="Enter the password" id="pass">
+                <br>
+                <br>
+                <input type="submit" value="SIGN UP">
+                <br>
+                <br>
+                <a  id="sign"
+                href="./signin.html">Already have an account?/SignIn</a>
+                <!-- <button id="code" onclick="generateotp()">Send Me A Code</button> -->
+            </form>
+        </div>
+        <button id="skip"><a href="cart.html">Skip,Continue As Guest</a></button>
+       
+    </div>
+</body>
+</html>
+<script>
+    let data=JSON.parse(localStorage.getItem("signup"))||[];
+    // let bag=[];
+
+let Form=document.querySelector("form");
+Form.addEventListener("submit",function(event){
+    event.preventDefault();
+    let object={
+        Email:Form.mail.value,
+        PhoneNumber:Form.phone.value,
+        Password:Form.pass.value,
+    }
+     
+     if(object.Email==""||object.PhoneNumber==""|| object.Password==""){
+        alert("Please fill the details");
+     }
+     else{
+        data.push(object);
+        localStorage.setItem("signup",JSON.stringify(data));
+     }
+     
+})
+
+
+
+
+
+
+    // function generateotp(){
+
+        
+    //     // setInterval(function(){
+    //     //     alert("OTP sent");
+    //     // },5000);
+    //     let digits='0123456789';
+    //     let OTP='';
+    //     for(let i=0;i<4;i++){
+    //         OTP+=digits[Math.floor(Math.random()*10)];
+    //     }
+    //     bag.push(OTP);
+    //     return(OTP);
+
+    
+      
+    //     localStorage.setItem(otp,JSON.stringify(bag));
+       
+    
+    // }
+    // generateotp();
+    // console.log(bag);
+    // function myFunction(){
+    //     var popup = document.getElementById("myPopup");
+    //     popup.classList.toggle("show");
+    // }
+
+
+</script>
+  <!-- <p>By “logging in to Chicken Lover”, you agree to our Privacy Policy and Terms & Conditions.</p> -->
+  
+  <!-- <div class="popup" onclick="myFunction()">Click here to Enter the code -->
+      <!-- <input class="popuptext" id="myPopup" type="number"> -->

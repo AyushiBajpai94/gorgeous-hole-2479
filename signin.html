@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <style>
+        .signin{
+            /* border: 1px solid black; */
+            height: 300px;
+            width: 300px;
+            margin: auto;
+            text-align: center;
+            margin-top: 100px;
+            padding-top: 50px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        form{
+            /* border: 1px solid red; */
+            height: auto;
+            width: auto;
+            margin-top: 40px;
+        }
+        h2{
+            text-decoration: underline;}
+    </style>
+</head>
+<body>
+    <div class="signin">
+        <h2>SIGN IN</h2>
+        <form>
+            UserName:<input type="number" placeholder="Enter registered number" id="Mobile">
+            <br>
+            <br>
+            Password:<input type="password" placeholder="Enter your Password" id="password">
+            <br>
+            <br>
+            <input type="submit" value="SignIn" style="background-color:black; color: white;" >
+            </form>
+    </div>
+   
+</body>
+</html>
+<script>
+    let LSData=JSON.parse(localStorage.getItem("signup"))||[];
+    let NLSData=JSON.parse(localStorage.getItem("signIn"))||[];
+    let NForm=document.querySelector("form");
+    NForm.addEventListener("submit",function(e){
+        e.preventDefault();
+        let obj={
+            PhoneNumber:NForm.Mobile.value,
+            Password:NForm.password.value,
+        }
+        NLSData.push(obj);
+        localStorage.setItem("signIn",JSON.stringify(NLSData));
+
+        flag=false;
+        if(NLSData[NLSData.length-1].PhoneNumber==LSData[LSData.length-1].PhoneNumber 
+        && NLSData[NLSData.length-1].Password==LSData[LSData.length-1].Password){
+           flag=true;
+        }
+ 
+    if(flag==true){
+      alert("Sign in Successful");
+    }
+    else{
+      alert("Wrong Credentials");
+    }
+    })
+</script>

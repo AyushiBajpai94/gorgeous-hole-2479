@@ -16,7 +16,7 @@
         <a id="menu" onclick="menucard()" href="Dashboard.html">Menu</a>
         <a id="deal">Deals</a>
         <div class="Sign">
-            <a id="user" href="">
+            <a id="user" href="signup.html">
                 <img src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg">
             </a>
                 <a  id="sign">Sign In  <a id="one">|</a></a>
@@ -146,7 +146,9 @@ let bag=0;
         // console.log(Math.ceil(Totalprice));
         // let Totalcart=document.createElement("h4");
         // Totalcart.innerText="Totalprice: "+ Totalprice;
-        document.querySelector("#two").append(Totalprice);
+        document.querySelector("#two").innerHTML="";
+        document.querySelector("#two").append("₹"+Totalprice);
+        let Totalqty=totalqty(cartItems);
                 // console.log(bag);
      }
 
@@ -178,12 +180,13 @@ function delitem(name){
     for(let i=0;i<cartItems.length;i++){
         if(cartItems[i].Name==name){
             cartItems.splice(i,1);
+            
+            localStorage.setItem("CartProducts",JSON.stringify(cartItems));
             displaydata();
             return;
         }
     }
 }
-
 function totalprice(cartItems){
     let totalcartprice=0;
     let totalcartqty=0;
@@ -195,7 +198,14 @@ function totalprice(cartItems){
     }
     return totalcartprice;
 }
-
+function totalqty(cartItems){
+    let totalcartqty=0;
+    let total;
+    for(let i=0;i<cartItems;i++){
+        totalcartqty+=cartItems[i].Qty;
+    }
+    return totalcartqty;
+}
 
 displaydata();
 console.log(bag);

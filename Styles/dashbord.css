@@ -39,6 +39,7 @@
     position: relative;
     top: 50px;
     font-size:x-large;
+    text-decoration: none;
  }
  #logo img{
     height: 100px;
