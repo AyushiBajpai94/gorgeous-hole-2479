@@ -91,14 +91,17 @@ padding-bottom: 40%;
  
  .sidenavbar{
    /* border: 1px solid black; */
-   height:auto;
+   height:800px;
    width: 250px;
    position: fixed;
    top: 115px;
    left: 50px;
-   background-color: white;
-   z-index: -1;
+   /* background-color: white; */
+   /* z-index: -1; */
    
+ }
+ #Hot_Deals{
+  cursor: pointer;
  }
  .sidenavbar h2{
    text-align: center;
@@ -108,11 +111,14 @@ padding-bottom: 40%;
    display: block;
    font-size: 20px;
    padding: 6px 8px 6px 16px;
-   color: gray;
+   text-decoration: none;
+   color: black;
+   /* color: gray; */
  }
  .sidenavbar a:hover{
    color: black;
    cursor: -webkit-grab;
+   text-decoration: none;
  }
  .Main{
    /* border: 1px solid red; */

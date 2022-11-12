@@ -29,7 +29,22 @@
     <div id="cartbody">
     <h1>MY CART</h1>
     </div>
-    <div id="container"></div>
+    <div id="cartPay">
+        <div id="container"></div>
+        <div id="bill">
+            <div>
+                <img src="https://online.kfc.co.in/static/media/Offers_Coupon_Icon.72b94c41.svg" alt="%symbol">
+                <p>Apply Offers & Deals</p>
+                <button id="view">View All</button>
+            </div>
+            <div id="subtotal">
+                <h4 id="sub">SubTotal   :      </h4>
+                <h4 id="gst">GST</h4>
+            </div>
+            <button id="checkout" onsubmit="submit()">Checkout</button>
+        </div>
+    </div>
+    
 
     <div class="Lbottom">
         <div>
@@ -97,6 +112,7 @@ let bag=0;
     // displaydata(cartItems)
     function displaydata(){
         document.getElementById("container").innerHTML="";
+        // let GST=1;
     for(let i=0;i<cartItems.length;i++){
             let Div=document.createElement("div");
 
@@ -105,9 +121,10 @@ let bag=0;
 
             let product=document.createElement("h2");
             product.innerText=cartItems[i].Name;
+            product.style.width="600px";
 
             let price=document.createElement("h2");
-            price.innerText=cartItems[i].Price;
+            price.innerText="₹"+cartItems[i].Price;
             
             let addbtn=document.createElement("button");
             addbtn.setAttribute("class","add");
@@ -128,6 +145,8 @@ let bag=0;
             });
             let Qty=document.createElement("button");
             Qty.innerText=cartItems[i].Qty;
+            
+        
             // let description=document.createElement("p");
             // description.innerText=el.Description;
 
@@ -139,7 +158,7 @@ let bag=0;
                 delitem(cartItems[i].Name);
     });
    
-    Div.append(image,product,price,addbtn,"\n","\n",Qty,"\n","\n",subbtn,"\n","\n","\n",Delete);
+    Div.append(image,product,addbtn,"\n","\n",Qty,"\n","\n",subbtn,"\n","\n","\n",price,Delete);
     document.querySelector("#container").append(Div);
         }
         let Totalprice=Math.ceil(totalprice(cartItems));
@@ -148,6 +167,8 @@ let bag=0;
         // Totalcart.innerText="Totalprice: "+ Totalprice;
         document.querySelector("#two").innerHTML="";
         document.querySelector("#two").append("₹"+Totalprice);
+        document.getElementById("sub").append ("₹"+Totalprice)
+        // document.getElementById("gst").append(GST);
         let Totalqty=totalqty(cartItems);
                 // console.log(bag);
      }
@@ -194,6 +215,7 @@ function totalprice(cartItems){
     for(let i=0;i<cartItems.length;i++){
         totalcartprice+=cartItems[i].Price*cartItems[i].Qty;
         totalcartqty+=cartItems[i].Qty;
+        // GST=GST*2;
         
     }
     return totalcartprice;

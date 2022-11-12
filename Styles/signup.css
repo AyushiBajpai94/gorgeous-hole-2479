@@ -42,17 +42,22 @@
     border-radius: 20px;
  }
  #skip{
-    background-color: black;
+  border: none;
+    background-color: red;
     color: white;
     height: 40px;
     width: 450px;
     text-align: center;
     border-radius: 20px;
+    text-decoration: none;
+    
     
  }
  a{
     text-decoration: none;
-    color: white;
+    color: black;
+    font-weight: bold;
+    
  }
 /* 
 

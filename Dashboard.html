@@ -29,11 +29,11 @@
      <!-- sidenavbar -->
      <div class="sidenavbar">
         <h2>Chicken Lover Menu</h2>
-        <a>Hot Deals</a>
-        <a>Chicken Buckets</a>
-        <a>Hot Launches</a>
-        <a>Box Meals</a>
-        <a>Burgers</a>
+        <a href="#Hot_Deals">Hot Deals</a>
+        <a href="#CHICKEN_BUCKETS">Chicken Buckets</a>
+        <a href="#HOT_LAUNCHES">Hot Launches</a>
+        <a href="#BOX_MEALS">Box Meals</a>
+        <a href="#BURGERS">Burgers</a>
         <a>Biryani Buckets</a>
         <a>Snack</a>
         <a>Beverages and Deserts</a>
@@ -41,31 +41,32 @@
              <!-- Main -->
 
      <div class="Main">
-            <input type="search" placeholder="search our menu" id="search">
+            <input type="search" placeholder="search our menu" id="search"  oninput="search()">
            
             <div id="Main-child">
-                <h1>Hot Deals</h1>
+                <h1 id="Hot_Deals">Hot Deals</h1>
                 <div id="cat1"></div>
             </div>
             <div id="second-child">
-                <h1>CHICKEN BUCKETS</h1>
+                <h1 id="CHICKEN_BUCKETS">CHICKEN BUCKETS</h1>
                 <div id="cat2"></div>
             </div>
             <div id="third-child">
-                <h1>HOT LAUNCHES</h1>
+                <h1 id="HOT_LAUNCHES">HOT LAUNCHES</h1>
                 <div id="cat3"></div>
             </div>
             <div id="fourth-child">
-                <h1>BOX MEALS</h1>
+                <h1 id="BOX_MEALS">BOX MEALS</h1>
                 <div id="cat4"></div>
             </div>
             <div id="fifth-child">
-                <h1>BURGERS</h1>
+                <h1 id="BURGERS">BURGERS</h1>
                 <div id="cat5"></div>
             </div>
             
             
      </div>
+    
      <div class="Lbottom">
         <div>
             <a id="logo" href="">
@@ -124,8 +125,7 @@
 <script>
     let cartItems=JSON.parse(localStorage.getItem("CartProducts"))||[];
 
-  
-
+   
 
 let category1=[
             {url:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/L-8000240.jpg?ver=21.88",
@@ -166,6 +166,7 @@ let category1=[
             Description:"4 pieces of crispy, juicy chicken in a bucket served with 2 Pepsi"},
         ]
 function displaydatacat1(arr){
+    document.querySelector("#cat1").innerHTML="";
     for(let i=0;i<arr.length;i++){
             let Div=document.createElement("div");
 
@@ -184,15 +185,19 @@ function displaydatacat1(arr){
             let cart=document.createElement("button");
             cart.innerText="Add To Cart";
             cart.addEventListener("click",function(){
-            addData("CartProducts",i);
+            addData1("CartProducts",i);
     });
     Div.append(image,product,price,description,cart);
     document.querySelector("#cat1").append(Div);
         };
      }
-     displaydatacat1(category1);   
+     displaydatacat1(category1);  
+     
+     
+    
 
-function addData(key,value){
+
+function addData1(key,value){
       let LSData=JSON.parse(localStorage.getItem(key))||[];
       let newobj={
       Image:category1[value].url,      
@@ -242,6 +247,7 @@ let category2=[
                 Description:"Save 40% on USB -KFC variety bucket now with Peri Peri Strips-Grab Now!"},
 ]
 function displaydatacat2(arr1){
+    document.querySelector("#cat2").innerHTML="";
     for(let i=0;i<arr1.length;i++){
             let Div=document.createElement("div");
 
@@ -260,7 +266,7 @@ function displaydatacat2(arr1){
             let cart=document.createElement("button");
             cart.innerText="Add To Cart";
             cart.addEventListener("click",function(){
-            addData("CartProducts",i);
+            addData2("CartProducts",i);
         });
             Div.append(image,product,price,description,cart);
             // console.log(Div)
@@ -270,7 +276,7 @@ function displaydatacat2(arr1){
         }
     }
      displaydatacat2(category2);
-function addData(key,value){
+function addData2(key,value){
      let LSData=JSON.parse(localStorage.getItem(key))||[];
      let newobj={
       Image:category2[value].url,      
@@ -318,6 +324,7 @@ let category3=[
 ]
 
 function displaydatacat3(arr1){
+    document.querySelector("#cat3").innerHTML="";
     for(let i=0;i<arr1.length;i++){
             let Div=document.createElement("div");
 
@@ -336,7 +343,7 @@ function displaydatacat3(arr1){
             let cart=document.createElement("button");
             cart.innerText="Add To Cart";
             cart.addEventListener("click",function(){
-            addData("CartProducts",i);
+            addData3("CartProducts",i);
         });
             Div.append(image,product,price,description,cart);
             // console.log(Div)
@@ -346,7 +353,7 @@ function displaydatacat3(arr1){
         }
     }
      displaydatacat3(category3);
-function addData(key,value){
+function addData3(key,value){
         let LSData=JSON.parse(localStorage.getItem(key))||[];
         let newobj={
       Image:category3[value].url,      
@@ -390,6 +397,7 @@ function addData(key,value){
 ]
 
 function displaydatacat4(arr1){
+    document.querySelector("#cat4").innerHTML="";
     for(let i=0;i<arr1.length;i++){
             let Div=document.createElement("div");
 
@@ -408,7 +416,7 @@ function displaydatacat4(arr1){
             let cart=document.createElement("button");
             cart.innerText="Add To Cart";
             cart.addEventListener("click",function(){
-            addData("CartProducts",i);
+            addData4("CartProducts",i);
         });
             Div.append(image,product,price,description,cart);
             // console.log(Div)
@@ -418,7 +426,7 @@ function displaydatacat4(arr1){
         }
     }
      displaydatacat4(category4);
-function addData(key,value){
+function addData4(key,value){
         let LSData=JSON.parse(localStorage.getItem(key))||[];
         let newobj={
         Image:category4[value].url,      
@@ -459,6 +467,7 @@ let category5=[
                 Description:"Signature chicken burger made with a crunchy chicken fillet, veggies & a delicious mayo sauce"},
 ]
 function displaydatacat5(arr1){
+    document.querySelector("#cat5").innerHTML="";
     for(let i=0;i<arr1.length;i++){
             let Div=document.createElement("div");
 
@@ -478,7 +487,7 @@ function displaydatacat5(arr1){
             cart.innerText="Add To Cart";
             cart.addEventListener("click",function(){
                 alert("Added to cart");
-                addData("CartProducts",i);
+                addData5("CartProducts",i);
         });
             Div.append(image,product,price,description,cart);
             // console.log(Div)
@@ -487,16 +496,48 @@ function displaydatacat5(arr1){
     }
 
 displaydatacat5(category5);
-function addData(key,value){
+function addData5(key,value){
         let LSData=JSON.parse(localStorage.getItem(key))||[];
         let newobj={
         Image:category5[value].url,      
         Name:category5[value].Productname,
         Price:category5[value].Price,
         Qty:1,
+        GST:19,
     };
     LSData.push(newobj);
     localStorage.setItem(key,JSON.stringify(LSData));
     console.log(LSData)
      }
+
+
+     function search(){
+        let Value=document.querySelector("input").value;
+        console.log(Value)
+        let searcheddata5=category5.filter(function(el){
+            return el.Productname.toLowerCase().includes(Value.toLowerCase())
+        });
+        displaydatacat5(searcheddata5);
+
+         let searcheddata4=category4.filter(function(el){
+            return el.Productname.toLowerCase().includes(Value.toLowerCase())
+        });
+        displaydatacat4(searcheddata4);
+
+        let searcheddata3=category3.filter(function(el){
+            return el.Productname.toLowerCase().includes(Value.toLowerCase())
+        });
+        displaydatacat3(searcheddata3);
+
+        let searcheddata2=category2.filter(function(el){
+            return el.Productname.toLowerCase().includes(Value.toLowerCase())
+        });
+        displaydatacat2(searcheddata2);
+        
+        let searcheddata1=category1.filter(function(el){
+            return el.Productname.toLowerCase().includes(Value.toLowerCase())
+        });
+        displaydatacat1(searcheddata1);
+
+    }
 </script>
