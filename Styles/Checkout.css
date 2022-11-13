@@ -1,0 +1,193 @@
+.navbar{
+    /* border: 1px solid black; */
+    display: block;
+    text-align: left;
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 1;
+    height: 110px;
+    width: 100%;
+    padding-top: 2px;
+    padding-left: 2px;
+    z-index: 1;
+    
+ }
+ .navbar>button{
+    border: 1px solid black;
+    height: 30px;
+    position: relative;
+    bottom: 50px;
+    left: 90px;
+    border-radius: 20px;
+    height: 40px;
+    width:150px;
+    background-color: white;
+ }
+
+ #logo img{
+    margin-left: 350px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+ }
+ #sign{
+    color: black;
+ }
+ .navbar a:hover{
+    color: #c91c53;
+ }
+ .navbar>a:nth-child(4){
+    /* border: 3px solid yellow; */
+    position: relative;
+    left: 360px;
+    bottom: 40px;
+    font-size: large;
+    font-weight: bold;
+ }
+ 
+ #user>img{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    bottom: 30px;
+    left: 350px;
+ }
+ 
+ a{
+  text-decoration: none;
+  
+ }
+.topSection{
+    /* border: 1px solid black; */
+    background-color: whitesmoke;
+    height: 300px;
+    width: 600px;
+    margin-top: 120px;
+    margin-left: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+.topSection>div:first-child{
+    /* border: 1px solid black; */
+    height: 280px;
+    width: 200px;
+    margin-left:5px;
+    margin-top: 5px;
+
+}
+.topSection>div:first-child>button{
+    border-radius: 20px;
+    margin-left: 20px;
+    height: 30px;
+    width: 100px;
+}
+.topSection>div:last-child{
+    /* border: 1px solid black; */
+    height: 280px;
+    width: 360px;
+    margin-top: 5px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    padding-top: 30px;
+    gap: 10px;
+}
+form>input{
+    border: none;
+    height: 30px;
+}
+.topSection>div:last-child>div{
+    /* border: 2px black solid; */
+    height: 100px;
+    width: 300px;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+/* .topSection>div:last-child>div>input{
+ margin-top: 5px;
+ 
+} */
+.topSection>div:last-child>div>p{
+   
+    width: 250px;
+    padding-top: 15px;
+}
+.payment{
+    border:none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    height: 150px;
+    width: 600px;
+    margin-left: 150px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+}
+.payment>a{
+    margin-top: 40px;
+    text-decoration: underline;
+    color: black;
+}
+#paymentMethod{
+    /* border: 2px red solid; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    height: auto;
+    width: 600px;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    margin-left: 150px;
+    background-color: whitesmoke;
+}
+#paymentMethod>div>h2{
+    /* border: 1px solid black; */
+    /* margin: auto; */
+    text-align: center;
+    margin-top: 0px;
+    width: 598px;
+    height: 60px;
+    padding-top: 20px;
+    background-color: white;
+}
+#paymentMethod>div:nth-child(2){
+    /* border: 3px solid black; */
+    height: auto;
+    width: 500px;
+    margin-top: 10px;
+    margin-left: 48px;
+    margin-bottom: 20px;
+    display: flex;
+    background-color: white;
+    /* margin: auto; */
+}
+#paymentMethod>div:last-child>h4{
+    margin-left: 10px;
+}
+
+#cardsubmit{
+    /* border: 1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    height: 250px;
+}
+#cardsubmit>input{
+    width: 250px;
+    border: 2px solid black;
+    margin: auto;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+#Sub{
+    /* border: 1px solid red; */
+    border:none;
+    width: 200px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: grey;
+}

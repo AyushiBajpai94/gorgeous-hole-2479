@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckOut</title>
+    <link rel="stylesheet" href="./Styles/Checkout.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <button><a href="cart.html">Back to Cart</a></button>
+        <a id="logo" href="index.html">
+            <img src="Maroon Modern Chicken Logo.png">
+        </a>
+            <a id="user" href="signup.html">
+                <img src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg">
+            </a>
+                <a  id="sign" href="signup.html">Sign In</a>
+     </div>
+     <!-- <div id="top1">
+        <h1>CHECKOUT</h1>
+     </div> -->
+     <div class="topSection">
+                    <div id="child1">
+                        <h2>CONTACT INFO</h2>
+                        <button><a href="signup.html">Sign In</a></button>
+                    </div>
+                    <div id="child2">
+                        <form>
+                            <input type="text" placeholder="Enter Full Name">
+                            <input type="number" placeholder="Phone Number">
+                            <input type="text" placeholder="E-Mail">
+                        </form>
+                        <div>
+                            <input type="checkbox" id="checkbox">
+                            <p>I want to know about the cool stuff at KFC on Email & SMS (I know I can unsubscribe anytime).</p>
+                        </div>
+                    </div>
+     </div>
+     <div class="payment">
+        <h1>PAYMENT</h1>
+        <div id="paymentmethod"></div>
+        <a href="#paymentMode">Add Payment Method</a>
+     </div>
+
+     <div id="paymentMethod">
+        <div>
+            <h2 id="paymentMode">Payment Mode</h2>
+        </div>
+        <div id="radiobutton" >
+            <input type="radio" onclick="display()">
+            <h4>Credit / Debit Card</h4>
+        </div>
+        <div id="opendetail"></div>
+        
+     </div> 
+</body>
+</html>
+<script>
+    let LSData=JSON.parse(localStorage.getItem("UserDetail"))||[];
+    let PaymentForm;
+    function display(){
+        document.getElementById("opendetail").innerHTML="";
+        let Div=document.createElement("div");
+        let Form=document.createElement("form");
+        Form.setAttribute("id","cardsubmit");
+        // console.log(Form);
+   PaymentForm=Form;
+        let NameonCard=document.createElement("input");
+        NameonCard.setAttribute("type","text");
+        NameonCard.setAttribute("placeholder","Name On your Card");
+        NameonCard.setAttribute("id","NameonCard")
+    
+        let CardNumber=document.createElement("input");
+        CardNumber.setAttribute("type","Number");
+        CardNumber.setAttribute("placeholder","Card Number");
+        CardNumber.setAttribute("id","CardNumber")
+        CardNumber.setAttribute("max","9999999999999999");
+        
+        let year=document.createElement("input");
+        year.setAttribute("type","month");
+        year.setAttribute("placeholder","MM/YY *");
+        year.setAttribute("id","year");
+
+        let cvv=document.createElement("input");
+        cvv.setAttribute("type","password,number");
+        cvv.setAttribute("placeholder","CVV *");
+        cvv.setAttribute("id","cvv");
+        cvv.setAttribute("max","999")
+        // console.log(cvv);
+        
+        let submitbutton=document.createElement("input");
+        submitbutton.setAttribute("type","submit");
+        submitbutton.setAttribute("value","Submit")
+        submitbutton.setAttribute("id","Sub")
+    
+        Form.append(NameonCard,CardNumber,year,cvv,submitbutton);
+    
+        Div.append(Form);
+        document.getElementById("opendetail").append(Div);
+
+        
+        console.log(PaymentForm);
+
+        PaymentForm.addEventListener("submit",function(e){
+       // e.preventDefault();
+            let newobj={
+            Name:PaymentForm.NameonCard.value,
+            Carddetail:PaymentForm.CardNumber.value,
+            year:PaymentForm.year.value,
+            cvv:PaymentForm.cvv.value
+        }
+        console.log(newobj);
+        if(newobj.Name==""|| newobj.Carddetail==""||newobj.year==""||newobj.cvv==""){
+            alert("Please fill all the details");
+        }
+        else{
+            LSData.push(newobj);
+            localStorage.setItem("UserDetail",JSON.stringify(LSData));
+            let lastfourdigit;
+            let num1=(LSData[LSData.length-1].Carddetail);
+           // let len=cardnumstr.length;
+            
+                lastfourdigit=num1%(10000)
+            let carddigit="  **** **** **** "+lastfourdigit+ "  ";
+
+            document.getElementById("paymentmethod").append( LSData[LSData.length-1].Name,"  ",carddigit,"  ",LSData[LSData.length-1].year);
+            Form.reset();
+        }
+        
+    })
+}
+
+    
+</script>

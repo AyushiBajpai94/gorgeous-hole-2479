@@ -10,18 +10,21 @@
 <body>
       <!-- Navbar -->
       <div class="navbar">
-        <a id="logo" href="">
+        <a id="logo" href="index.html">
             <img src="Maroon Modern Chicken Logo.png">
         </a>
         <a id="menu" onclick="menucard()" href="Dashboard.html">Menu</a>
-        <a id="deal">Deals</a>
+        <a id="deal" href="Deals.html">Deals</a>
         <div class="Sign">
             <a id="user" href="signup.html">
                 <img src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg">
             </a>
-                <a  id="sign">Sign In  <a id="one">|</a></a>
+                <a  id="sign" href="signup.html">Sign In  <a id="one">|</a></a>
                 <a id="two">₹</a>
-                <a href="cart.html"  id="cart"><img src="https://images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg"></a>
+                
+                <a href="cart.html"  id="cart"><img src="https://images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg"><a id="cart1"></a> </a>
+                
+                
         </div>
      </div>
 
@@ -35,13 +38,12 @@
             <div>
                 <img src="https://online.kfc.co.in/static/media/Offers_Coupon_Icon.72b94c41.svg" alt="%symbol">
                 <p>Apply Offers & Deals</p>
-                <button id="view">View All</button>
+                <input type="text" placeholder="Apply Code" id="coupon">
             </div>
             <div id="subtotal">
-                <h4 id="sub">SubTotal   :      </h4>
-                <h4 id="gst">GST</h4>
+                <h4 id="sub">SubTotal   : </h4>
             </div>
-            <button id="checkout" onsubmit="submit()">Checkout</button>
+            <button id="checkout" onsubmit="submit()"><a href="Checkout.html">CheckOut</a></button>
         </div>
     </div>
     
@@ -103,13 +105,8 @@
 </html>
 <script>
     let cartItems=JSON.parse(localStorage.getItem("CartProducts"))||[];
-
-    // let totalCost=cartItems.reduce((acc,el)=>acc+el.bag,0);
-    // console.log(totalCost);
-    // console.log(totalCost);
-
-let bag=0;
-    // displaydata(cartItems)
+     let bag=0;
+  
     function displaydata(){
         document.getElementById("container").innerHTML="";
         // let GST=1;
@@ -162,15 +159,19 @@ let bag=0;
     document.querySelector("#container").append(Div);
         }
         let Totalprice=Math.ceil(totalprice(cartItems));
+        
+        let TotalQuantity=totalqty(cartItems);
+        console.log(TotalQuantity);
         // console.log(Math.ceil(Totalprice));
         // let Totalcart=document.createElement("h4");
         // Totalcart.innerText="Totalprice: "+ Totalprice;
+        // let a="                                                ";
         document.querySelector("#two").innerHTML="";
         document.querySelector("#two").append("₹"+Totalprice);
-        document.getElementById("sub").append ("₹"+Totalprice)
-        // document.getElementById("gst").append(GST);
-        let Totalqty=totalqty(cartItems);
-                // console.log(bag);
+        document.querySelector("#sub").innerHTML="";
+        document.getElementById("sub").append ("SubTotal  :"+"   "+"₹"+Totalprice);
+        document.querySelector("#cart1").innerHTML="";
+        document.querySelector("#cart1").append(TotalQuantity);
      }
 
 function additem(name){
@@ -223,7 +224,7 @@ function totalprice(cartItems){
 function totalqty(cartItems){
     let totalcartqty=0;
     let total;
-    for(let i=0;i<cartItems;i++){
+    for(let i=0;i<cartItems.length;i++){
         totalcartqty+=cartItems[i].Qty;
     }
     return totalcartqty;
